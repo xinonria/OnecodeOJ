@@ -8,16 +8,16 @@ using namespace std;
 
 int main()
 {
-	int a,b;
-	cin>>a>>b;
-	if((a+b) & 1)
+	int a, b;
+	cin >> a >> b;
+	if ((a + b) & 1)
 	{
-		cout<<"odd"<<'\n';
+		cout << "odd" << '\n';
 		return 0;
 	}
 	else
 	{
-		cout<<"even"<<'\n';
+		cout << "even" << '\n';
 		return 0;
 	}
 	return 0;

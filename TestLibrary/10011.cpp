@@ -7,7 +7,7 @@ int main()
 {
 	int a;
 	int b;
-	cin>>a>>b;
-	cout<<abs(a-b);
+	cin >> a >> b;
+	cout << abs(a - b);
 	return 0;
 }
