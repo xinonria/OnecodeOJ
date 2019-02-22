@@ -6,7 +6,6 @@ int main()
 {
 	int a, b, c;
 	cin >> a >> b >> c;
-	int tempa, tempb;
 	if (a == 90 || b == 90 || c == 90)      //含有90度三角形
 	{
 		if (a == 90)
