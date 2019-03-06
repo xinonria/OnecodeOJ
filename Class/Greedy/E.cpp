@@ -1,40 +1,18 @@
-#include <iostream>
-#include <cmath>
-#include <cstdio>
-#include <algorithm>
-
+#include<iostream>
+#include<algorithm>
 using namespace std;
-
+int a[100001],n,ans;
 int main()
 {
-	int n;
-	cin >> n;
-	long long Maxn = 0;
-	int SJX[4];
-	cin >> SJX[1] >> SJX[2] >> SJX[3];
-	int d;
-	do
+	cin>>n;
+	for(int i=1;i<=n;i++) cin>>a[i];
+	sort(a+1,a+n+1);
+	for(int i=n-2;i>=1;i--)
 	{
-		sort(SJX+1, SJX+4);
-		int One=0, Two=0, Three = 0;
-		if (SJX[2] + SJX[3] > SJX[1] && SJX[1] + SJX[3] > SJX[2])
-		One = SJX[1] + SJX[2] > SJX[3] ? SJX[1] + SJX[2] + SJX[3] : 0;
-		if (d + SJX[3] > SJX[2] && SJX[2] + SJX[3] > d)
-			Two = d + SJX[2] > SJX[3] ? d + SJX[2] + SJX[3] : 0;
-		if (d + SJX[1] > SJX[2] && d + SJX[2] > SJX[1])
-		Three = SJX[1] + SJX[2] > d ? SJX[1] + SJX[2] + d : 0;
-		if (Two > One && Two > Three)
-		{
-			SJX[1] = d;
+		if((a[i]+a[i+1])>a[i+2]){
+			ans=a[i]+a[i+1]+a[i+2];
+			break;
 		}
-		if (Three > One && Three > Two)
-		{
-			SJX[3] = d;
-		}
-		if (Maxn < SJX[1] + SJX[2] + SJX[3] && SJX[1] + SJX[2] > SJX[3] && SJX[2] + SJX[3] > SJX[1] && SJX[1] + SJX[3] > SJX[2])
-		{
-			Maxn =  SJX[1] + SJX[2] + SJX[3];
-		}
-	} while(scanf("%d", &d) != EOF);
-	cout << Maxn;
+	}
+	cout<<ans;
 }
