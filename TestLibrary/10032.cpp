@@ -1,16 +1,18 @@
 #include<iostream>
-
+#include<cmath>
 using namespace std;
 
 int main()
 {
-	int n,m;
-	cin>>n>>m;
-	int temp=n;
-	for(int i=1;i<=m;++i)
+	int a,n;
+	cin>>a>>n;
+	int temp=a;
+	int win=0;
+	for(int i=1;i<=n;++i)
 	{
-		cout<<n;
-		n+=temp;
+		win+=temp;
+		temp+=a*pow(10,i);
 	}
+	cout<<win<<'\n';
 	return 0;
 }
